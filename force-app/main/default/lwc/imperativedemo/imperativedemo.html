@@ -1,0 +1,13 @@
+<template>
+    <header>Imperative Call of Apex Class</header>
+    <template if:true={accountlist}>
+        <lightning-datatable
+        key-field="Id"
+        columns={columns}
+        data={accountlist}></lightning-datatable>
+    </template>
+
+    <template if:true={error}>
+        {error}
+    </template>
+</template>
