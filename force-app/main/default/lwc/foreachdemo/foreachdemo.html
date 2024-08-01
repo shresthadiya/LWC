@@ -1,0 +1,11 @@
+<template>
+    <template if:true={accountdetails.data}>
+        <template for:each={accountdetails.data} for:item="acc">
+            <h2 key = {accountdetails.Id}> {acc.Name} </h2>
+        </template>
+    </template>
+
+    <template if:true={accountdetails.error}>
+        {accountdetails.error}
+    </template>
+</template>
