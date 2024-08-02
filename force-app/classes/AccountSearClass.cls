@@ -1,8 +1,12 @@
 public with sharing class AccountSearClass {
-    @AuraEnabled(cacheable = true)
-    public static List<Account> searchAccounts(string searchKey){
 
-        string searchVal = '%' + searchKey + '%';
-        return [SELECT Id, Name, Phone, Type, Total_Opportunity_Amount__c FROM Account WHERE Name LIKE : searchVal LIMIT 10];
+    @AuraEnabled(cacheable=true)
+    public static List<Account> searchAcc(String searchKey) {
+
+    String searchVal = '%' + searchKey + '%';
+    return [Select id,name,phone,type,Total_Opportunity_Amount__c from Account where Name LIKE : searchVal];
+
+
     }
+    
 }
