@@ -12,13 +12,13 @@ export default class Passparameterdemo extends LightningElement {
     columns = columns;
     accounts;
     error;
-    searchkey = '';
+    searchkey ='';
 
     handleonChange(event){
         this.searchkey = event.target.value;
     }
 
-    @wire(searchacc, {searchkey : '$searchKey'})
+    @wire(searchacc, {searchkey :'$searchKey'})
     searchaccount({data, error}){
         if(data){
             this.accounts = data;

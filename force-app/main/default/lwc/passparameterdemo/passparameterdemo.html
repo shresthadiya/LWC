@@ -1,10 +1,10 @@
 <template>
     <lightning-card title = "Account Details">
-        <lightning-input type = "Search" label = "Enter Search Value" value = {searchKey} onchange = {handleonChange}></lightning-input>
+        <lightning-input type = "Search" label = "Enter Search Value" value ={searchKey} onchange ={handleonChange}></lightning-input>
         <lightning-datatable
-        key-field = "Id"
-        data = {accounts}
-        columns = {columns}
+        key-field ="Id"
+        data ={accounts}
+        columns ={columns}
         >
         </lightning-datatable>
     </lightning-card>
