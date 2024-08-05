@@ -1,4 +1,4 @@
-import { api, LightningElement,track,wire} from 'lwc';
+import { LightningElement } from 'lwc';
 import lstAccount from '@salesforce/apex/AccountSearClass.searchAcc';
 
 const columns = [
@@ -9,21 +9,21 @@ const columns = [
     {label : 'Total Opportunity Amount', fieldName : 'Total_Opportunity_Amount__c'},
 ];
 
-
-export default class Passparameterdemo extends LightningElement {
-    searchKey = '';
+export default class PassparamImperative extends LightningElement {
     columns = columns;
+    searchKey = '';
     accounts;
     error;
     handleonChange(event){
         this.searchKey = event.target.value;
     }
-    @wire(lstAccount,{search : '$searchKey'})
-    wiredAccounts({ error, data }) {
-        if (data) {
-            this.accounts = data;
-        } else {
+    handleButtonClick(){
+        lstAccount({search : this.searchKey})
+        .then(result =>{
+            this.accounts = result;
+        })
+        .catch(error =>{
             this.error = error;
-        }
+        });
     }
 }

@@ -1,0 +1,11 @@
+<template>
+    <lightning-card>
+        <lightning-input type="search" label="Enter Search Value" value= {searchKey} onchange= {handleonChange}></lightning-input>
+        <lightning-button label="Fetch Accounts" onclick={handleButtonClick}></lightning-button>
+         <lightning-datatable
+            key-field="id"
+            data = {accounts}
+            columns= {columns}>
+        </lightning-datatable>
+    </lightning-card>
+</template>
