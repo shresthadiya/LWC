@@ -28,7 +28,7 @@ export default class Refreshapexdemo extends LightningElement {
         }
     }
 
-    handleSelection(){
+    handleSelection(event){
         if(event.detail.selectedRows.length > 0){
             this.selectedRecord = event.detail.selectedRows[0].Id;
         }
